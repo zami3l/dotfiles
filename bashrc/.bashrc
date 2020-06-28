@@ -38,6 +38,7 @@ fi
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:
 
 # Alias
+# Update/Upgrade package
 if grep -q "Arch" /etc/issue ; then
 alias install='sudo pacman -S'
 alias update='sudo pacman -Sy'
@@ -49,17 +50,26 @@ alias install='sudo apt-get install'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 fi
+
+# Additionnal basic commands
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown'
+
+# Docker
 alias d='docker'
 alias dc='docker-compose'
-alias shutdown='sudo shutdown'
-alias reboot='sudo reboot'
+
+# Python
 alias py='python3'
+
+# Virtualization
+alias virsh='virsh -c qemu:///system'
 
 # Couleurs
 RED="\[\033[0;31m\]"
