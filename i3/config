@@ -145,8 +145,8 @@ bindsym $modkey+r mode "resize"
 
 # Démarrage et Configuration de la bar i3status
 bar {
-  status_command i3status --config ~/.config/i3/.i3status.conf
-  font pango:Noto Sans Mono 11
+  status_command python ~/.config/i3/i3bar_top.conf
+  font pango:Hack, FontAwesome 10
   Height 22
   separator_symbol |
   position top
@@ -158,6 +158,19 @@ bar {
     active_workspace #212121 #212121 #FFEB3B
     inactive_workspace #212121 #212121 #757575
     urgent_workspace #212121 #212121 #FFEB3B
+  }
+}
+
+bar {
+  status_command python ~/.config/i3/i3bar_bot.conf
+  font pango:Hack, FontAwesome 10
+  Height 22
+  separator_symbol |
+  workspace_buttons no
+  colors {
+    separator #8BC34A
+    background #212121
+    statusline #f44336
   }
 }
 
