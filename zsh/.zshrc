@@ -156,3 +156,6 @@ alias virsh='virsh -c qemu:///system'
 
 # HackLab
 alias hacklab='docker run -ti --rm -v /home/zami3l/partage:/mnt hacklab /bin/bash'
+
+# Delete all docker container
+alias drmall ='docker rm $(docker ps -aq)'
