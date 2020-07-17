@@ -10,6 +10,9 @@ floating_modifier $modkey
 # Ouvrir le terminal
 bindsym $modkey+Return exec --no-startup-id tilix 
 
+# Ouvrir ranger (File manager)
+bindsym $modkey+z exec --no-startup-id tilix -e ranger
+
 # Fermer la fenêtre active
 bindsym $modkey+q kill
 
