@@ -42,23 +42,59 @@ from util import *
 # then click on the application you want to inspect.
 
 WINDOW_ICONS = {
-    'code': fa.icons['code'],
+    #Dev
+    'code-oss': fa.icons['code'],
+    'bless': fa.icons['file-code'],
+    'notepadqq': fa.icons['file-alt'],
+
+    #File manager
+    'thunar': fa.icons['copy'],
+    'nautilus': fa.icons['copy'],
+
+    #Web browser
     'chromium': fa.icons['chrome'],
-    'discord': fa.icons['comment'],
-    'feh': fa.icons['image'],
-    'filezilla': fa.icons['server'],
     'firefox': fa.icons['firefox'],
+    'Tor Browser': fa.icons['user-secret'],
+
+    #Downloads
+    'filezilla': fa.icons['server'],
+
+    #Management key
     'keepassxc': fa.icons['key'],
     'keybase': fa.icons['key'],
+
+    #Social
+    'discord': fa.icons['comment'],
+
+    #Pictures
+    'feh': fa.icons['image'],
+
+    #Song/Movies
     'mpv': fa.icons['tv'],
-    'nautilus': fa.icons['copy'],
+    'vlc': fa.icons['tv'],
+    'spotify': fa.icons['music'],
+
+    #Virtual manager
+    'virt-manager': fa.icons['window-restore'],
+    
+    #Network
+    'wireshark': fa.icons['camera'],
+
+    #Remote desktop
+    'org.remmina.Remmina': fa.icons['chromecast'],
+
+    #Param
     'pavucontrol': fa.icons['volume-up'],
-    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
+
+    #Games
     'steam': fa.icons['steam'],
-    'thunar': fa.icons['copy'],
+
+    #Email
     'thunderbird': fa.icons['envelope'],
+
+    #Terminal
     'urxvt': fa.icons['terminal'],
-    'tilix': fa.icons['terminal'],
+    'tilix': fa.icons['terminal']
 }
 
 # This icon is used for any application not in the list above
