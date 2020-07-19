@@ -182,6 +182,16 @@ force_display_urgency_hint 500 ms
 # Bloquer la configuration
 set $Locker i3lock -d -c $black0 -f
 
+# Régler la luminosité
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+# Régler le volume
+# Le "0" corresponds à la destination trouvée via "pactl list sinks"
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
 # Ouvrir le menu système 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, (b) off-screen
 mode "$mode_system" {
@@ -202,9 +212,11 @@ bindsym $modkey+Shift+e mode "$mode_system"
 # Misc (above)
 new_window pixel 4
 
-# Floating dialogs
+# Fenêtres flottantes 
+# Pour déterminer le type de classe on utilise "xprop"
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 # Fenêtres couleurs
 client.focused #CF000F #CF000F #141414 #ff7066
