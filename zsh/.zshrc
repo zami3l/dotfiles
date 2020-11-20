@@ -155,7 +155,7 @@ alias py='python3'
 alias virsh='virsh -c qemu:///system'
 
 # HackLab
-alias hacklab='docker run -ti --rm -v /home/zami3l/partage:/mnt hacklab /bin/bash'
+alias hacklab='docker run -ti --rm -v /home/zami3l/pentest:/mnt zami3l/hacklab /bin/bash'
 
 # Disk Encryption
 alias dopen='sudo cryptsetup -v luksOpen /dev/disk/by-uuid/d2bf1936-4c1f-4c2c-a0a1-a00d7cfb5bf6 encrypt && sudo mount --uuid e1f87fa5-17fe-435b-8921-f823fcb6b131 /mnt/disk-encryption'
