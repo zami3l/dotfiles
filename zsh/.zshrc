@@ -168,3 +168,6 @@ alias dclose='sudo umount /mnt/disk-encryption ; sudo cryptsetup -v luksClose en
 
 # Delete all docker container
 alias drmall='docker rm $(docker ps -aq)'
+
+# Navi
+alias n='navi --path "/home/zami3l/.cheats"'
