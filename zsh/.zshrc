@@ -120,6 +120,11 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Delete "%" after partiel lines
+setopt PROMPT_CR
+setopt PROMPT_SP
+export PROMPT_EOL_MARK=""
+
 # Alias
 # Update/Upgrade package
 if grep -q "Arch" /etc/issue ; then
