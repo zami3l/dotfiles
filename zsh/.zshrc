@@ -169,5 +169,11 @@ alias dclose='sudo umount /mnt/disk-encryption ; sudo cryptsetup -v luksClose en
 # Delete all docker container
 alias drmall='docker rm $(docker ps -aq)'
 
+# Neovim
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+alias nv='nvim'
+
 # Navi
 alias n='navi --path "/home/zami3l/.cheats"'
