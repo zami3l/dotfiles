@@ -175,5 +175,10 @@ if type nvim > /dev/null 2>&1; then
 fi
 alias nv='nvim'
 
+# Tmux
+alias t='tmux'
+alias tls='tmux ls'
+alias ta='tmux a -t' 
+
 # Navi
-alias n='navi --path "/home/zami3l/.cheats"'
+alias n='navi --path "$HOME/.cheats"'
