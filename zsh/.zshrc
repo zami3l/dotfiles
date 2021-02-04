@@ -178,7 +178,8 @@ alias nv='nvim'
 # Tmux
 alias t='tmux'
 alias tls='tmux ls'
-alias ta='tmux a -t' 
+alias ts='tmux a -t' 
+alias ta='tmux a'
 
 # Navi
 alias n='navi --path "$HOME/.cheats"'
