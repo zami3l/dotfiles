@@ -8,7 +8,7 @@ class Iptables():
     cmd = []
     tables = {}
     tables.update({"filter": ('INPUT', 'FORWARD', 'OUTPUT')})
-    tables.update({"nat": ('PREROUTING', 'INPUT', 'OUTPUT', 'POSTROUTING')})
+    tables.update({"nat": ('PREROUTING', 'OUTPUT', 'POSTROUTING')})
     tables.update({"mangle": ('PREROUTING', 'INPUT', 'FORWARD', 'OUTPUT', 'POSTROUTING')})
 
     policy = ('INPUT', 'FORWARD', 'OUTPUT')
@@ -16,10 +16,12 @@ class Iptables():
     target = ('ACCEPT', 'DENY', 'REJECT', 'DROP')
 
     def reset(self):
+        
+        self.cmd.append("\n# Initialisation")
 
         for iTables in self.tables.keys():
 
-            for iChain in self.chain:
+            for iChain in self.tables[iTables]:
                 
                 # Accept all
                 self.cmd.append("iptables -t {} -P {} {}".format(iTables, iChain, self.target[0]))
@@ -29,10 +31,16 @@ class Iptables():
             self.cmd.append("iptables -t {} -F".format(iTables))
             self.cmd.append("iptables -t {} -X".format(iTables))
         
+        self.cmd.append("\n# Default policy : DROP")
+
         for iPolicy in self.policy:
             
             # Change policy default
             self.cmd.append("iptables -P {} {}".format(iPolicy, self.target[3]))
+
+        self.cmd.append("\n# Interface lo : ACCEPT")
+        self.cmd.append("iptables -A INPUT -i lo -j ACCEPT")
+        self.cmd.append("iptables -A OUTPUT -o lo -j ACCEPT")
 
         return self.cmd
 
@@ -41,7 +49,6 @@ def check_args(_agrs=None):
     # Init Argparse
     parser = argparse.ArgumentParser(description='Generate rules')
 
-    parser.add_argument('ACTION', type=str, metavar='ACTION', help="Select action RESET/DEFAULT")
     parser.add_argument('-v', '--view', action="store_true", help="View rules")
     parser.add_argument('-o', '--output', metavar='OUTPUT', help="Generate rules in bash file")
 
@@ -63,14 +70,12 @@ def write_file(action, data, file):
 
 def action(mode):
     
-    if mode.ACTION.upper() == 'RESET':
-        
-        rules = Iptables().reset()
+    rules = Iptables().reset()
 
     if mode.output is not None:
         
         # Header bash
-        write_file('write', "#!/bin/bash\n", mode.output)
+        write_file('write', "#!/bin/bash", mode.output)
 
     for irules in rules:
 
