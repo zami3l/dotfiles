@@ -1,3 +1,1 @@
-# Linux
-
-Linux - Fichier de configuration
+# Dotfiles Linux
