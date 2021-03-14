@@ -167,11 +167,12 @@ alias py='python3'
 alias virsh='virsh -c qemu:///system'
 
 # HackLab
-alias hacklab='docker run -ti --rm -v /home/zami3l/pentest:/mnt zami3l/hacklab /bin/bash'
+alias hacklab='docker run -ti --rm -v ~/pentest:/mnt hacklab:latest /bin/zsh'
+alias dtest='docker run -ti --rm examples:latest /bin/bash'
 
 # Disk Encryption
-alias dopen='sudo cryptsetup -v luksOpen /dev/disk/by-uuid/d2bf1936-4c1f-4c2c-a0a1-a00d7cfb5bf6 encrypt && sudo mount --uuid e1f87fa5-17fe-435b-8921-f823fcb6b131 /mnt/disk-encryption'
-alias dclose='sudo umount /mnt/disk-encryption ; sudo cryptsetup -v luksClose encrypt'
+alias dopen='sudo cryptsetup -v luksOpen /dev/disk/by-uuid/d2bf1936-4c1f-4c2c-a0a1-a00d7cfb5bf6 encrypt && sudo mount --uuid e1f87fa5-17fe-435b-8921-f823fcb6b131 /mnt/usbEncrypted'
+alias dclose='sudo umount /mnt/usbEncrypted ; sudo cryptsetup -v luksClose encrypt'
 
 # Delete all docker container
 alias drmall='docker rm $(docker ps -aq)'
@@ -180,6 +181,7 @@ alias drmall='docker rm $(docker ps -aq)'
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
+
 alias nv='nvim'
 
 # Tmux
@@ -189,4 +191,4 @@ alias ts='tmux a -t'
 alias ta='tmux a'
 
 # Navi
-alias n='navi --path "$HOME/.cheats"'
+alias n='navi --path "$HOME/developments/cheats"'
