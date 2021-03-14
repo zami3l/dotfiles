@@ -118,29 +118,32 @@ source $ZSH/oh-my-zsh.sh
 #Autojump
 source /usr/share/autojump/autojump.zsh
 
-# User configuration
-export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Delete "%" after partiel lines
-setopt PROMPT_CR
-setopt PROMPT_SP
-export PROMPT_EOL_MARK=""
+#setopt PROMPT_CR
+#setopt PROMPT_SP
+#export PROMPT_EOL_MARK=""
 
 # Alias
 # Update/Upgrade package
-if grep -q "Arch" /etc/issue ; then
-alias install='sudo pacman -S'
-alias update='sudo pacman -Sy'
-alias upgrade='sudo pacman -Syu'
-alias S='yay -S'
-alias Syu='yay -Syu'
-elif grep -q "Debian" /etc/issue ; then
-alias install='sudo apt-get install'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
+if grep -q "Arch" /etc/issue; then
+    alias install='sudo pacman -S'
+    alias update='sudo pacman -Sy'
+    alias upgrade='sudo pacman -Syu'
+    alias pacman='sudo pacman'
+    alias pacaur='yay --aur'
+    alias S='yay -S'
+    alias Syu='yay -Syu'
+elif grep -q "Debian" /etc/issue; then
+    alias install='sudo apt-get install'
+    alias update='sudo apt-get update'
+    alias upgrade='sudo apt-get upgrade'
+else
+    alias install='sudo dnf install'
+    alias update='sudo dnf update'
+    alias upgrade='sudo dnf upgrade'
 fi
 
 # Additionnal basic commands
