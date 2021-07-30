@@ -9,11 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-if grep -q "Arch" /etc/issue; then
-    ZSH=/usr/share/oh-my-zsh
-else
-    ZSH=$HOME/.oh-my-zsh
-fi
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
