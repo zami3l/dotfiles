@@ -9,3 +9,5 @@ set softtabstop=4           " Number of columns for TAB
 set expandtab               " Expand TABs to spaces
 
 set encoding=UTF-8          " Encoding UTF-8
+
+set paste                   " Disable auto-indenting with code paste
