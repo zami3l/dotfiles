@@ -1,0 +1,13 @@
+# ---------------------------------------
+# Alias FREEBSD
+# ---------------------------------------
+
+# Management bastille
+alias bl='doas bastille list'
+alias bc='doas bastille create'
+alias bstart='doas bastille start'
+alias bstop='doas bastille stop'
+alias bcli='doas bastille console'
+alias br='doas bastille rdr'
+alias bcp=' doas bastille cp'
+
