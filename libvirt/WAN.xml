@@ -1,6 +1,0 @@
-<network>
-	<name>WAN</name>
-	<forward mode='bridge'/>
-	<bridge name='WAN'/>
- 	<virtualport type='openvswitch'/>
-</network>

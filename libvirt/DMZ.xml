@@ -1,6 +1,0 @@
-<network>
-	<name>DMZ</name>
-	<forward mode='bridge'/>
-	<bridge name='DMZ'/>
- 	<virtualport type='openvswitch'/>
-</network>

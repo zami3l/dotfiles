@@ -1,6 +1,0 @@
-<network>
-	<name>LAN</name>
-	<forward mode='bridge'/>
-	<bridge name='LAN'/>
- 	<virtualport type='openvswitch'/>
-</network>

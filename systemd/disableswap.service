@@ -1,8 +1,0 @@
-[Unit]
-Description=Disable swap
-
-[Service]
-ExecStart=/sbin/swapoff -a
-
-[Install]
-WantedBy=multi-user.target
