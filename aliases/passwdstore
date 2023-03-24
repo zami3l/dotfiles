@@ -1,0 +1,14 @@
+# ---------------------------------------
+# Alias Pass
+# ---------------------------------------
+
+alias p='pass'
+alias pi='pass insert'
+alias pe='pass edit'
+alias pop='pass open'
+alias pc='pass -c'
+alias po='pass otp'
+alias poc='pass otp -c'
+alias pf='pass find'
+alias pg='pass grep'
+alias pu='pass git push'

@@ -1,0 +1,18 @@
+# ---------------------------------------
+# Alias DOCKER
+# ---------------------------------------
+
+# Docker
+alias d='docker'
+alias dps='docker ps'
+alias di='docker images'
+
+# Docker-compose
+alias dc='docker-compose'
+
+# Delete all docker container
+alias drmall='docker rm $(docker ps -aq)'
+
+# HackLab
+alias hacklab='docker run -ti --rm -v ~/pentest:/mnt hacklab:latest /bin/zsh'
+alias dtest='docker run -ti --rm examples:latest /bin/bash'

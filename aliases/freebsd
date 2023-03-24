@@ -1,0 +1,24 @@
+# ---------------------------------------
+# Alias FREEBSD
+# ---------------------------------------
+
+# DIR Alias
+D=$HOME/.aliases
+
+# BastilleBSD
+[ -f $D/bastille ] && source $D/bastille
+
+# Basic command
+[ -f $D/basic ] && source $D/basic
+
+# Pass
+[ -f $D/passwdstore ] && source $D/passwdstore
+
+# Tmux
+[ -f $D/tmux ] && source $D/tmux
+
+# Vim
+[ -f $D/vim ] && source $D/vim
+
+# Agent
+[ -f $D/agent ] && source $D/agent

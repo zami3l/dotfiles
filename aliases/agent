@@ -1,0 +1,9 @@
+# ---------------------------------------
+# Alias Agent SSH / GPG
+# ---------------------------------------
+
+# Agent SSH
+eval `keychain --eval --agents ssh $HOME/.ssh/ssh_*`
+
+# Agent GPG
+alias agpg='eval `keychain --nogui --eval --agents gpg 286BDBD8CC4881EA`'

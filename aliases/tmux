@@ -1,0 +1,8 @@
+# ---------------------------------------
+# Alias Tmux
+# ---------------------------------------
+
+alias t='tmux'
+alias tls='tmux ls'
+alias ts='tmux a -t' 
+alias ta='tmux a'

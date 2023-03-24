@@ -1,8 +1,7 @@
 # ---------------------------------------
-# Alias FREEBSD
+# Alias BastilleBSD
 # ---------------------------------------
 
-# Management bastille
 alias bl='doas bastille list'
 alias bc='doas bastille create'
 alias bstart='doas bastille start'

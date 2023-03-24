@@ -1,0 +1,27 @@
+# ---------------------------------------
+# Alias LINUX
+# ---------------------------------------
+
+# DIR Alias
+D=$HOME/.aliases
+
+# Basic command
+[ -f $D/basic ] && source $D/basic
+
+# Pass
+[ -f $D/passwdstore ] && source $D/passwdstore
+
+# Tmux
+[ -f $D/tmux ] && source $D/tmux
+
+# Docker
+[ -f $D/docker ] && source $D/docker
+
+# Vim
+[ -f $D/vim ] && source $D/vim
+
+# Agent
+[ -f $D/agent ] && source $D/agent
+
+# Other
+[ -f $D/other ] && source $D/other

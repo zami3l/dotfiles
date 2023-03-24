@@ -1,0 +1,16 @@
+# ---------------------------------------
+# Alias Other
+# ---------------------------------------
+
+# Virtualization
+alias virsh='virsh -c qemu:///system'
+
+# Python
+alias py='python3'
+
+# Navi
+alias n='navi --path "$HOME/.cheats"'
+
+# Disk Encryption
+alias dopen='sudo cryptsetup -v luksOpen /dev/disk/by-uuid/d2bf1936-4c1f-4c2c-a0a1-a00d7cfb5bf6 encrypt && sudo mount --uuid e1f87fa5-17fe-435b-8921-f823fcb6b131 /mnt/usbEncrypted'
+alias dclose='sudo umount /mnt/usbEncrypted ; sudo cryptsetup -v luksClose encrypt'
