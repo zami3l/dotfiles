@@ -12,8 +12,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -36,50 +36,6 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:
-
-# Alias
-# Update/Upgrade package
-if grep -q "Arch" /etc/issue ; then
-alias install='sudo pacman -S'
-alias update='sudo pacman -Sy'
-alias upgrade='sudo pacman -Syu'
-alias S='yay -S'
-alias Syu='yay -Syu'
-elif grep -q "Debian" /etc/issue ; then
-alias install='sudo apt-get install'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-fi
-
-# Additionnal basic commands
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias reboot='sudo reboot'
-alias shutdown='sudo shutdown'
-
-# Docker
-alias d='docker'
-alias dc='docker-compose'
-
-# Python
-alias py='python3'
-
-# Virtualization
-alias virsh='virsh -c qemu:///system'
-
-# HackLab
-alias hacklab='docker run -ti --rm -v /home/zami3l/pentest:/mnt zami3l/hacklab /bin/bash'
-
-# Disk Encryption
-alias dopen='sudo cryptsetup -v luksOpen /dev/disk/by-uuid/d2bf1936-4c1f-4c2c-a0a1-a00d7cfb5bf6 encrypt && sudo mount --uuid e1f87fa5-17fe-435b-8921-f823fcb6b131 /mnt/disk-encryption'
-alias dclose='sudo umount /mnt/disk-encryption ; sudo cryptsetup -v luksClose encrypt'
-
-# Delete all docker container
-alias drmall='docker rm $(docker ps -aq)'
 
 # Couleurs
 RED="\[\033[0;31m\]"
@@ -111,3 +67,6 @@ fi
 if [ "$UID" == 0 ] ; then
 	PS1="$WHITE$Trait_1er$Crochet_Ouv$RED$Utilisateur$WHITE$Crochet_Ferm$Trait_Union$Crochet_Ouv $LIGHT_GREEN$Current_Directory $WHITE$Crochet_Ferm$Saut_Ligne$WHITE$Trait_2eme $RED"
 fi
+
+# Alias Linux
+[ -f $HOME/.aliases/linux ] && source $HOME/.aliases/linux

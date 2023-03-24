@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 ZSH=$HOME/.oh-my-zsh
@@ -116,75 +116,12 @@ source /usr/share/autojump/autojump.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Delete "%" after partiel lines
 #setopt PROMPT_CR
 #setopt PROMPT_SP
 #export PROMPT_EOL_MARK=""
 
-# Alias
-# Update/Upgrade package
-if grep -q "Arch" /etc/issue; then
-    alias install='sudo pacman -S'
-    alias update='sudo pacman -Sy'
-    alias upgrade='sudo pacman -Syu'
-    alias pacman='sudo pacman'
-    alias pacaur='yay --aur'
-    alias S='yay -S'
-    alias Syu='yay -Syu'
-elif grep -q "Debian" /etc/issue; then
-    alias install='sudo apt-get install'
-    alias update='sudo apt-get update'
-    alias upgrade='sudo apt-get upgrade'
-else
-    alias install='sudo dnf install'
-    alias update='sudo dnf update'
-    alias upgrade='sudo dnf upgrade'
-fi
-
-# Additionnal basic commands
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias reboot='sudo reboot'
-alias shutdown='sudo shutdown'
-
-# Docker
-alias d='docker'
-alias dc='docker-compose'
-
-# Python
-alias py='python3'
-
-# Virtualization
-alias virsh='virsh -c qemu:///system'
-
-# HackLab
-alias hacklab='docker run -ti --rm -v ~/pentest:/mnt hacklab:latest /bin/zsh'
-alias dtest='docker run -ti --rm examples:latest /bin/bash'
-
-# Disk Encryption
-alias dopen='sudo cryptsetup -v luksOpen /dev/disk/by-uuid/d2bf1936-4c1f-4c2c-a0a1-a00d7cfb5bf6 encrypt && sudo mount --uuid e1f87fa5-17fe-435b-8921-f823fcb6b131 /mnt/usbEncrypted'
-alias dclose='sudo umount /mnt/usbEncrypted ; sudo cryptsetup -v luksClose encrypt'
-
-# Delete all docker container
-alias drmall='docker rm $(docker ps -aq)'
-
-# Neovim
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
-
-alias nv='nvim'
-
-# Tmux
-alias t='tmux'
-alias tls='tmux ls'
-alias ts='tmux a -t' 
-alias ta='tmux a'
-
-# Navi
-alias n='navi --path "$HOME/developments/cheats"'
+# Alias Linux
+[ -f $HOME/.aliases/linux ] && source $HOME/.aliases/linux
